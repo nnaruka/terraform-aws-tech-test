@@ -12,22 +12,20 @@ S3 Bucket and Dynamodb table should be created before executing terraform.  S3 b
 
 # Software Used
 
-Terraform verion - 0.12.29
-
-AWS Cli Version - 2.0.36
+1. Terraform verion - 0.12.29
+2. AWS Cli Version - 2.0.36
 
 
 # Steps to build infrastructure
 
 ```
 1. git clone <this repository>
-2. cd terraform-aws-tech-test.ireland
-3. execute the command - 
-		terraform apply -var-file=virginia.tfvars
-		This should build instructure in Ireland Region
-4. execute command 
-		terraform apply -var-file=ireland.tfvars
-		This will build infrastructure in Virginia Region
-5. Create Geolocation record for each ALB. DNS names of ALB is displayed after execution of above terraform scripts in step 3,5.
+2. execute following command and this should build instructure in Ireland Region
+	cd terraform-aws-tech-test/ireland
+	terraform apply -var-file=ireland.tfvars	
+3. execute following command and this should build instructure in virginia Region
+	cd ../terraform-aws-tech-test/virginia
+	terraform apply -var-file=virginia.tfvars
+5. Create Geolocation record for each ALB. DNS names of ALB is displayed after execution of above terraform scripts in step 2,3.
 ```
 
